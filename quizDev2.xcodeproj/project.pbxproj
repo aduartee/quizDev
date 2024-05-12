@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26D739862BEE8CC700CDF728 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D739852BEE8CC700CDF728 /* QuestionViewController.swift */; };
+		26D739882BEE8FE400CDF728 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D739872BEE8FE400CDF728 /* QuestionModel.swift */; };
 		26F257002BEE889A00048C7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F256FF2BEE889A00048C7B /* AppDelegate.swift */; };
 		26F257022BEE889A00048C7B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F257012BEE889A00048C7B /* SceneDelegate.swift */; };
 		26F257042BEE889A00048C7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F257032BEE889A00048C7B /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26D739852BEE8CC700CDF728 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		26D739872BEE8FE400CDF728 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		26F256FC2BEE889A00048C7B /* quizDev2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizDev2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26F256FF2BEE889A00048C7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26F257012BEE889A00048C7B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,15 +60,33 @@
 		26F256FE2BEE889A00048C7B /* quizDev2 */ = {
 			isa = PBXGroup;
 			children = (
+				26F257142BEE88D700048C7B /* Model */,
+				26F257132BEE88CB00048C7B /* View */,
 				26F256FF2BEE889A00048C7B /* AppDelegate.swift */,
-				26F257012BEE889A00048C7B /* SceneDelegate.swift */,
 				26F257032BEE889A00048C7B /* ViewController.swift */,
+				26F257012BEE889A00048C7B /* SceneDelegate.swift */,
 				26F257052BEE889A00048C7B /* Main.storyboard */,
 				26F257082BEE889B00048C7B /* Assets.xcassets */,
 				26F2570A2BEE889B00048C7B /* LaunchScreen.storyboard */,
 				26F2570D2BEE889B00048C7B /* Info.plist */,
 			);
 			path = quizDev2;
+			sourceTree = "<group>";
+		};
+		26F257132BEE88CB00048C7B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				26D739852BEE8CC700CDF728 /* QuestionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		26F257142BEE88D700048C7B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				26D739872BEE8FE400CDF728 /* QuestionModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +162,9 @@
 			files = (
 				26F257042BEE889A00048C7B /* ViewController.swift in Sources */,
 				26F257002BEE889A00048C7B /* AppDelegate.swift in Sources */,
+				26D739862BEE8CC700CDF728 /* QuestionViewController.swift in Sources */,
 				26F257022BEE889A00048C7B /* SceneDelegate.swift in Sources */,
+				26D739882BEE8FE400CDF728 /* QuestionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +323,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +331,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = aduartee.quizDev2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -326,6 +354,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,6 +362,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = aduartee.quizDev2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
