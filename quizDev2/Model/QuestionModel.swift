@@ -7,20 +7,8 @@
 
 import Foundation
 
-struct QuestionModel {
-    let label: String
+struct QuestionModel: Codable {
+    let title: String
     let questions: [String]
-    let correctResponse: Int
+    let response: Int
 }
-
-//Create a array type Questions and create questions
-var questionsArr: [QuestionModel] = [
-    QuestionModel(
-        label: "teste",
-        questions: [],
-        correctResponse: 1
-    ),
-    
-    
-    
-]

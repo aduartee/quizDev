@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import Foundation
 
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var titleQuestion: UILabel!
+    @IBOutlet var buttonResponses: [UIButton]!
     let numberQuestion: Int = 0
     
     override func viewDidLoad() {
@@ -17,10 +19,36 @@ class QuestionViewController: UIViewController {
         styleView()
     }
     
+    @IBAction func getResponseOnTap(_ sender: UIButton) {
+        print("Tag of button is: \(sender.tag)")
+    }
     func styleView() {
         navigationItem.hidesBackButton = true
         titleQuestion.numberOfLines = 0
-        titleQuestion.text =  questionsArr[numberQuestion].label
+        makeRequest { (questions) in
+            self.titleQuestion.text = questions[0].title            
+        }
+//        titleQuestion.text =  questionsArr[].label
+    }
+    
+    private func makeRequest(completion: @escaping ([QuestionModel]) -> ()) {
+        let url = URL(string:"https://json-questions.vercel.app/questions")!
+        let task = URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            
+            guard let dataResult = data else { return }
+            
+            do{
+                let postResponse = try JSONDecoder().decode([QuestionModel].self, from: dataResult)
+                completion(postResponse)
+            } catch let error {
+                print(error)
+            }
+//
+//            
+        }
+        
+        task.resume()
         
     }
     
