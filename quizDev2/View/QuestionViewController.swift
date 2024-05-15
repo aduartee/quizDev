@@ -22,13 +22,19 @@ class QuestionViewController: UIViewController {
     @IBAction func getResponseOnTap(_ sender: UIButton) {
         print("Tag of button is: \(sender.tag)")
     }
+    
     func styleView() {
         navigationItem.hidesBackButton = true
         titleQuestion.numberOfLines = 0
         makeRequest { (questions) in
-            self.titleQuestion.text = questions[0].title            
+            DispatchQueue.main.async {
+                self.titleQuestion.text = questions[self.numberQuestion].title
+                for button in self.buttonResponses {
+                    let newTitleQuestion = questions[self.numberQuestion].questions[button.tag]
+                    button.setTitle(newTitleQuestion, for: .normal)
+                }
+            }
         }
-//        titleQuestion.text =  questionsArr[].label
     }
     
     private func makeRequest(completion: @escaping ([QuestionModel]) -> ()) {
@@ -44,8 +50,6 @@ class QuestionViewController: UIViewController {
             } catch let error {
                 print(error)
             }
-//
-//            
         }
         
         task.resume()
