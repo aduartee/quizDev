@@ -12,7 +12,8 @@ class QuestionViewController: UIViewController {
 
     @IBOutlet weak var titleQuestion: UILabel!
     @IBOutlet var buttonResponses: [UIButton]!
-    let numberQuestion: Int = 0
+    var numberQuestion: Int = 0
+    var points: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,19 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func getResponseOnTap(_ sender: UIButton) {
-        print("Tag of button is: \(sender.tag)")
+        makeRequest { (questions) in
+            DispatchQueue.main.async {
+                let correctResponse = questions[self.numberQuestion].response
+                if sender.tag == correctResponse {
+                    self.numberQuestion += 1
+                    self.points += 1
+                } else {
+                    
+                }
+                
+            }
+            
+        }
     }
     
     func styleView() {
