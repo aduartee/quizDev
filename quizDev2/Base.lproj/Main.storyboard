@@ -60,48 +60,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo da questao" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSx-jb-EHM">
-                                <rect key="frame" x="64" y="273" width="302" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Syi-1I-MO2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <rect key="frame" x="64" y="175" width="302" height="128"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYN-ot-qMZ">
-                                <rect key="frame" x="80" y="465" width="270" height="60"/>
+                                <rect key="frame" x="80" y="375" width="270" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="JEv-gM-Txc"/>
+                                    <constraint firstAttribute="height" constant="90" id="JEv-gM-Txc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="getResponseOnTap:" destination="bWJ-Yn-to7" eventType="touchUpInside" id="3zE-7K-BmA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kRd-eo-e4X">
-                                <rect key="frame" x="80" y="565" width="270" height="60"/>
+                                <rect key="frame" x="80" y="505" width="270" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="99X-cU-xky"/>
+                                    <constraint firstAttribute="height" constant="90" id="99X-cU-xky"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="getResponseOnTap:" destination="bWJ-Yn-to7" eventType="touchUpInside" id="0Id-9M-xL4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erc-hd-eW0">
-                                <rect key="frame" x="80" y="665" width="270" height="60"/>
+                                <rect key="frame" x="80" y="635" width="270" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="ryA-Hn-CjB"/>
+                                    <constraint firstAttribute="height" constant="90" id="ryA-Hn-CjB"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Button">
-                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="22"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Button" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="23"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="getResponseOnTap:" destination="bWJ-Yn-to7" eventType="touchUpInside" id="Rt2-Ra-5J7"/>
@@ -116,7 +113,7 @@
                             <constraint firstItem="PSx-jb-EHM" firstAttribute="leading" secondItem="b7O-Y5-w6U" secondAttribute="leading" constant="64" id="3jE-9w-oTb"/>
                             <constraint firstItem="erc-hd-eW0" firstAttribute="top" secondItem="kRd-eo-e4X" secondAttribute="bottom" constant="40" id="4ah-wI-tnh"/>
                             <constraint firstItem="JYN-ot-qMZ" firstAttribute="top" secondItem="PSx-jb-EHM" secondAttribute="bottom" constant="72" id="7b9-vv-Bdb"/>
-                            <constraint firstItem="PSx-jb-EHM" firstAttribute="top" secondItem="b7O-Y5-w6U" secondAttribute="top" constant="170" id="8QN-bt-04d"/>
+                            <constraint firstItem="PSx-jb-EHM" firstAttribute="top" secondItem="b7O-Y5-w6U" secondAttribute="top" constant="72" id="8QN-bt-04d"/>
                             <constraint firstItem="kRd-eo-e4X" firstAttribute="top" secondItem="JYN-ot-qMZ" secondAttribute="bottom" constant="40" id="9A6-Yz-v0a"/>
                             <constraint firstItem="b7O-Y5-w6U" firstAttribute="trailing" secondItem="kRd-eo-e4X" secondAttribute="trailing" constant="80" id="VuU-sX-ELy"/>
                             <constraint firstItem="b7O-Y5-w6U" firstAttribute="trailing" secondItem="JYN-ot-qMZ" secondAttribute="trailing" constant="80" id="W5P-VK-dJn"/>
