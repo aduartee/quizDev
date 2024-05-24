@@ -37,7 +37,8 @@ class QuestionViewController: UIViewController {
                 
                 let isLatIndex: Bool = self.countActualQuestion == questions.count ? true : false
                 self.totalQuestions = questions.count
-                
+                self.setButtonsEnabled(false)
+
                 if !isLatIndex {
                     self.numberQuestion += 1
                     Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(self.loadLayout), userInfo: nil, repeats: false)
@@ -46,6 +47,12 @@ class QuestionViewController: UIViewController {
                 }
             }
             
+        }
+    }
+    
+    func setButtonsEnabled(_ enabled: Bool) {
+        for button in buttonResponses {
+            button.isEnabled = enabled
         }
     }
     
@@ -66,6 +73,7 @@ class QuestionViewController: UIViewController {
                     button.layer.cornerRadius = 20
                 }
                 self.countActualQuestion += 1
+                self.setButtonsEnabled(true)
             }
         }
     }
