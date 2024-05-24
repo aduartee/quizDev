@@ -1,3 +1,26 @@
+Data Source
+---
+
+- The algorithm questions in this app are sourced from an external endpoint. The app consumes this endpoint to fetch the questions dynamically. Here's how it works:
+
+- **Endpoint URL:**  https://json-questions.vercel.app/questions
+
+- The app makes a network request to the following endpoint URL:
+Copy code
+https://json-questions.vercel.app/questions
+
+Fetching Questions:
+
+Upon launching the app or when needed, a network request is sent to the endpoint URL using URLSession.
+The response from the endpoint is received asynchronously in JSON format.
+Parsing JSON:
+
+The JSON response is decoded into an array of QuestionModel objects using JSONDecoder.
+Populating Questions:
+
+The questions retrieved from the endpoint are then populated within the app's user interface for users to access and practice.
+By fetching questions dynamically from the endpoint, the app ensures that users have access to a varied and up-to-date collection of algorithmic challenges.
+
 **Link for endpoint:** https://json-questions.vercel.app/questions
 
 Initial View
