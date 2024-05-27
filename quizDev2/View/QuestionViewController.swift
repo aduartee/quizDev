@@ -70,7 +70,6 @@ class QuestionViewController: UIViewController {
                     button.backgroundColor = UIColor(red: 75/255.0, green: 140/255.0, blue: 225/255.0, alpha: 1.0)
                     let newTitleQuestion = questions[self.numberQuestion].questions[button.tag]
                     button.setTitle(newTitleQuestion, for: .normal)
-                    button.layer.cornerRadius = 20
                 }
                 self.countActualQuestion += 1
                 self.setButtonsEnabled(true)

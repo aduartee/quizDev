@@ -146,59 +146,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voce acertou 10 questoes de 10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB9-MG-mjC">
-                                <rect key="frame" x="64" y="383.66666666666669" width="272" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="g5I-Xc-gQV"/>
-                                </constraints>
+                                <rect key="frame" x="70" y="438.66666666666669" width="290" height="64.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100% de acertos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSs-Jg-WNi">
-                                <rect key="frame" x="54" y="533.66666666666663" width="292" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="RE0-ak-Ex7"/>
-                                </constraints>
+                                <rect key="frame" x="64" y="573.33333333333337" width="302" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns por finalizar o Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-IV-Goc">
-                                <rect key="frame" x="64" y="249.99999999999997" width="272" height="83.666666666666657"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👑" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-bE-0Wd">
+                                <rect key="frame" x="100" y="183" width="230" height="72"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="JrI-HE-b5V"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFh-bE-0Wd">
-                                <rect key="frame" x="150" y="163" width="100" height="72"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Gf2-pb-gyG"/>
                                     <constraint firstAttribute="height" constant="72" id="Pun-OO-JGw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khG-gC-JNy">
+                                <rect key="frame" x="120" y="633.33333333333337" width="190" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0xl-cM-98o"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Jogar Novamente" titleAlignment="automatic">
+                                    <color key="baseBackgroundColor" systemColor="linkColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="kdc-dj-l32"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parabéns por finalizar o Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gU6-IV-Goc">
+                                <rect key="frame" x="64" y="285" width="302" height="83.666666666666686"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ibt-D9-baw"/>
                         <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="rB9-MG-mjC" secondAttribute="trailing" constant="64" id="2Du-qE-c8s"/>
-                            <constraint firstItem="CFh-bE-0Wd" firstAttribute="top" secondItem="Ibt-D9-baw" secondAttribute="top" constant="60" id="FGq-L0-wn6"/>
-                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="CFh-bE-0Wd" secondAttribute="trailing" constant="150" id="IxV-qE-9bW"/>
-                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="YSs-Jg-WNi" secondAttribute="trailing" constant="54" id="Lp9-qp-FUD"/>
-                            <constraint firstItem="Ibt-D9-baw" firstAttribute="bottom" secondItem="YSs-Jg-WNi" secondAttribute="bottom" constant="200" id="N4B-hG-UQ4"/>
-                            <constraint firstItem="CFh-bE-0Wd" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="150" id="QUh-YF-zcv"/>
-                            <constraint firstItem="rB9-MG-mjC" firstAttribute="top" secondItem="gU6-IV-Goc" secondAttribute="bottom" constant="50" id="YGc-ZF-CJg"/>
-                            <constraint firstItem="rB9-MG-mjC" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="64" id="b4a-HO-pYL"/>
-                            <constraint firstItem="gU6-IV-Goc" firstAttribute="top" secondItem="CFh-bE-0Wd" secondAttribute="bottom" constant="15" id="d32-Me-huY"/>
-                            <constraint firstItem="YSs-Jg-WNi" firstAttribute="top" secondItem="rB9-MG-mjC" secondAttribute="bottom" constant="50" id="fhK-Q6-AI1"/>
-                            <constraint firstItem="YSs-Jg-WNi" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="54" id="i7l-P5-Vl4"/>
-                            <constraint firstItem="gU6-IV-Goc" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="64" id="vSD-cx-3qv"/>
-                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="gU6-IV-Goc" secondAttribute="trailing" constant="64" id="ygT-bP-s80"/>
+                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="YSs-Jg-WNi" secondAttribute="trailing" constant="64" id="3aF-ev-MQI"/>
+                            <constraint firstItem="gU6-IV-Goc" firstAttribute="top" secondItem="CFh-bE-0Wd" secondAttribute="bottom" constant="30" id="9LL-XX-TZI"/>
+                            <constraint firstItem="gU6-IV-Goc" firstAttribute="leading" secondItem="bkU-0x-IeE" secondAttribute="leading" constant="64" id="ENy-jj-BiV"/>
+                            <constraint firstItem="CFh-bE-0Wd" firstAttribute="top" secondItem="Ibt-D9-baw" secondAttribute="top" constant="80" id="FGq-L0-wn6"/>
+                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="rB9-MG-mjC" secondAttribute="trailing" constant="70" id="GUB-9D-gGa"/>
+                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="khG-gC-JNy" secondAttribute="trailing" constant="120" id="Oym-Rh-9Ed"/>
+                            <constraint firstItem="khG-gC-JNy" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" priority="100" constant="100" id="Qym-B3-dfZ"/>
+                            <constraint firstItem="khG-gC-JNy" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="120" id="SYa-rH-3tS"/>
+                            <constraint firstItem="YSs-Jg-WNi" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="64" id="TOS-3X-TTT"/>
+                            <constraint firstItem="YSs-Jg-WNi" firstAttribute="top" secondItem="rB9-MG-mjC" secondAttribute="bottom" constant="70" id="W4f-FB-O9w"/>
+                            <constraint firstItem="rB9-MG-mjC" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="70" id="WBE-EG-8Wb"/>
+                            <constraint firstItem="Ibt-D9-baw" firstAttribute="trailing" secondItem="CFh-bE-0Wd" secondAttribute="trailing" constant="100" id="YOH-lf-nrW"/>
+                            <constraint firstItem="rB9-MG-mjC" firstAttribute="top" secondItem="gU6-IV-Goc" secondAttribute="bottom" constant="70" id="uEX-LC-T6K"/>
+                            <constraint firstItem="CFh-bE-0Wd" firstAttribute="leading" secondItem="Ibt-D9-baw" secondAttribute="leading" constant="100" id="vUj-Lu-8ai"/>
+                            <constraint firstAttribute="trailing" secondItem="gU6-IV-Goc" secondAttribute="trailing" constant="64" id="wh4-J1-Nbl"/>
+                            <constraint firstItem="khG-gC-JNy" firstAttribute="top" secondItem="YSs-Jg-WNi" secondAttribute="bottom" constant="30" id="zxx-iY-psW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pG4-LG-ZBF"/>
@@ -231,8 +237,14 @@
             <point key="canvasLocation" x="47.441860465116278" y="-2.5751072961373391"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="C6g-5m-dns"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
         <image name="Logo" width="217" height="104"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
