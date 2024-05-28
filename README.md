@@ -5,11 +5,7 @@ Data Source
 
 - **Endpoint URL:**  https://json-questions.vercel.app/questions
 
-- The app makes a network request to the following endpoint URL:
-Copy code
-https://json-questions.vercel.app/questions
-
-Fetching Questions:
+### Fetching Questions:
 
 Upon launching the app or when needed, a network request is sent to the endpoint URL using URLSession.
 The response from the endpoint is received asynchronously in JSON format.
