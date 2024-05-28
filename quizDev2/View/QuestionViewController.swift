@@ -9,46 +9,73 @@ import UIKit
 import Foundation
 
 class QuestionViewController: UIViewController {
-
     @IBOutlet weak var titleQuestion: UILabel!
     @IBOutlet var buttonResponses: [UIButton]!
+    @IBOutlet weak var fadeView: UIView!
     var numberQuestion: Int = 0
     var points: Int = 0
     var countActualQuestion: Int = 0
     var totalQuestions:Int = 0
+    var loadedQuestions: [QuestionModel] = []
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        loadLayout()
+        showLoad(true)
+        makeRequest { (questions) in
+            DispatchQueue.main.async {
+                self.loadedQuestions = questions
+                self.loadLayout()
+                self.showLoad(false)
+            }
+        }
+    }
+    
+    func showLoad(_ show: Bool) {
+        activityIndicator.isHidden = !show
+        if show {
+            fadeIn()
+            activityIndicator.startAnimating()
+        } else {
+            fadeOut()
+            activityIndicator.stopAnimating()
+        }
     }
     
     @IBAction func getResponseOnTap(_ sender: UIButton) {
-        makeRequest { (questions) in
-            DispatchQueue.main.async {
-                let correctResponse = questions[self.numberQuestion].response
-                if sender.tag == correctResponse {
-                    self.points += 1
-                    sender.backgroundColor = .green
-                    
-                } else {
-                    sender.backgroundColor = .red
-                }
-                
-                let isLatIndex: Bool = self.countActualQuestion == questions.count ? true : false
-                self.totalQuestions = questions.count
-                self.setButtonsEnabled(false)
-
-                if !isLatIndex {
-                    self.numberQuestion += 1
-                    Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(self.loadLayout), userInfo: nil, repeats: false)
-                } else {
-                    self.goToRankingView()
-                }
-            }
+        let correctResponse = loadedQuestions[numberQuestion].response
+        if sender.tag == correctResponse {
+            self.points += 1
+            sender.backgroundColor = .green
             
+        } else {
+            sender.backgroundColor = .red
+        }
+        
+        let isLatIndex: Bool = self.countActualQuestion == loadedQuestions.count - 1 ? true : false
+        self.totalQuestions = loadedQuestions.count
+        self.setButtonsEnabled(false)
+        
+        if !isLatIndex {
+            self.numberQuestion += 1
+            Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(self.loadLayout), userInfo: nil, repeats: false)
+        } else {
+            self.goToRankingView()
         }
     }
+        
+    func fadeIn(duration: TimeInterval = 0.2, completion: ((Bool) -> Void)? = nil  ) {
+        UIView.animate(withDuration: duration, animations: {
+            self.fadeView.alpha = 1.0
+        }, completion: completion)
+    }
+    
+    func fadeOut(duration: TimeInterval = 0.5, completion: ((Bool) -> Void)? = nil) {
+           UIView.animate(withDuration: duration, animations: {
+               self.fadeView.alpha = 0.0
+           }, completion: completion)
+       }
     
     func setButtonsEnabled(_ enabled: Bool) {
         for button in buttonResponses {
@@ -62,19 +89,15 @@ class QuestionViewController: UIViewController {
     
     @objc func loadLayout() {
         titleQuestion.numberOfLines = 0
-        makeRequest { (questions) in
-            DispatchQueue.main.async {
-                self.titleQuestion.text = questions[self.numberQuestion].title
-                for button in self.buttonResponses {
-                    button.sizeToFit()
-                    button.backgroundColor = UIColor(red: 75/255.0, green: 140/255.0, blue: 225/255.0, alpha: 1.0)
-                    let newTitleQuestion = questions[self.numberQuestion].questions[button.tag]
-                    button.setTitle(newTitleQuestion, for: .normal)
-                }
-                self.countActualQuestion += 1
-                self.setButtonsEnabled(true)
-            }
+        self.titleQuestion.text = loadedQuestions[numberQuestion].title
+        for button in self.buttonResponses {
+            button.sizeToFit()
+            button.backgroundColor = UIColor(red: 75/255.0, green: 140/255.0, blue: 225/255.0, alpha: 1.0)
+            let newTitleQuestion = loadedQuestions[numberQuestion].questions[button.tag]
+            button.setTitle(newTitleQuestion, for: .normal)
         }
+        countActualQuestion += 1
+        setButtonsEnabled(true)
     }
     
     private func makeRequest(completion: @escaping ([QuestionModel]) -> ()) {
@@ -99,7 +122,7 @@ class QuestionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let rankingView = segue.destination as? RankingViewController 
         else {return}
-        rankingView.totalPoints = self.points
-        rankingView.totalQuestions = self.totalQuestions
+        rankingView.totalPoints = points
+        rankingView.totalQuestions = totalQuestions
     }
 }
