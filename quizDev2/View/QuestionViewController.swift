@@ -26,6 +26,7 @@ class QuestionViewController: UIViewController {
         makeRequest { (questions) in
             DispatchQueue.main.async {
                 self.loadedQuestions = questions
+                
                 self.loadLayout()
                 self.showLoad(false)
             }
@@ -44,11 +45,13 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func getResponseOnTap(_ sender: UIButton) {
-        let correctResponse = loadedQuestions[numberQuestion].response
-        if sender.tag == correctResponse {
+        let shuffledQuestions = loadedQuestions[numberQuestion].questions
+        guard let correctQuestionText = loadedQuestions[numberQuestion].correctQuestionText else { return }
+        let isCorrect:Bool = shuffledQuestions[sender.tag] == correctQuestionText
+    
+        if isCorrect {
             self.points += 1
             sender.backgroundColor = .green
-            
         } else {
             sender.backgroundColor = .red
         }
@@ -109,7 +112,10 @@ class QuestionViewController: UIViewController {
             
             do{
                 let postResponse = try JSONDecoder().decode([QuestionModel].self, from: dataResult)
-                completion(postResponse)
+                
+                let shuffleQuestions = postResponse.map { shuffledQuestions($0) }
+                completion(shuffleQuestions)
+
             } catch let error {
                 print(error)
             }
