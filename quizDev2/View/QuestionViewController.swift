@@ -26,10 +26,31 @@ class QuestionViewController: UIViewController {
         makeRequest { (questions) in
             DispatchQueue.main.async {
                 self.loadedQuestions = questions
+                
                 self.loadLayout()
                 self.showLoad(false)
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadAllQuestions()
+    }
+    
+    func reloadAllQuestions() {
+        makeRequest { (questions) in
+            DispatchQueue.main.async {
+                self.loadedQuestions = questions
+                self.numberQuestion = 0
+                self.points = 0
+                self.countActualQuestion = 0
+                self.totalQuestions = 0
+                self.loadLayout()
+                self.showLoad(false)
+            }
+        }
+    
     }
     
     func showLoad(_ show: Bool) {
@@ -44,16 +65,20 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func getResponseOnTap(_ sender: UIButton) {
-        let correctResponse = loadedQuestions[numberQuestion].response
-        if sender.tag == correctResponse {
+        let shuffledQuestions = loadedQuestions[numberQuestion].questions
+        guard let correctQuestionText = loadedQuestions[numberQuestion].correctQuestionText else { return }
+        let isCorrect:Bool = shuffledQuestions[sender.tag] == correctQuestionText
+    
+        if isCorrect {
             self.points += 1
             sender.backgroundColor = .green
-            
         } else {
             sender.backgroundColor = .red
         }
         
-        let isLatIndex: Bool = self.countActualQuestion == loadedQuestions.count - 1 ? true : false
+        let isLatIndex: Bool = self.countActualQuestion == loadedQuestions.count ? true : false
+        print(self.countActualQuestion)
+        print(loadedQuestions.count)
         self.totalQuestions = loadedQuestions.count
         self.setButtonsEnabled(false)
         
@@ -109,7 +134,10 @@ class QuestionViewController: UIViewController {
             
             do{
                 let postResponse = try JSONDecoder().decode([QuestionModel].self, from: dataResult)
-                completion(postResponse)
+                
+                let shuffleQuestions = postResponse.map { shuffledQuestions($0) }
+                completion(shuffleQuestions)
+
             } catch let error {
                 print(error)
             }
