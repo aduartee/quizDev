@@ -33,6 +33,26 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadAllQuestions()
+    }
+    
+    func reloadAllQuestions() {
+        makeRequest { (questions) in
+            DispatchQueue.main.async {
+                self.loadedQuestions = questions
+                self.numberQuestion = 0
+                self.points = 0
+                self.countActualQuestion = 0
+                self.totalQuestions = 0
+                self.loadLayout()
+                self.showLoad(false)
+            }
+        }
+    
+    }
+    
     func showLoad(_ show: Bool) {
         activityIndicator.isHidden = !show
         if show {
@@ -56,7 +76,9 @@ class QuestionViewController: UIViewController {
             sender.backgroundColor = .red
         }
         
-        let isLatIndex: Bool = self.countActualQuestion == loadedQuestions.count - 1 ? true : false
+        let isLatIndex: Bool = self.countActualQuestion == loadedQuestions.count ? true : false
+        print(self.countActualQuestion)
+        print(loadedQuestions.count)
         self.totalQuestions = loadedQuestions.count
         self.setButtonsEnabled(false)
         
