@@ -1,6 +1,15 @@
+About Project
+---
+This app was developed to improve my knowledge of Swift and UIKit. In this app, I learned how to get data from an endpoint in Swift, handle the data, organize it in classes, and display it in a View. I also learned more about arrays, Views, Controllers, and the MVC pattern used by UIKit. Additionally, I explored Auto Layout, trailing constraints, and clipping to ensure the UI is responsive and visually appealing. I learned how to randomly sort arrays. I used this to make sure the questions appear in different orders each time the user starts the quiz.
+
+Requirements
+---
+- macOS
+- Xcode (latest version)
+- Swift 5
+
 Data Source
 ---
-
 - The algorithm questions in this app are sourced from an external endpoint. The app consumes this endpoint to fetch the questions dynamically. Here's how it works:
 
 - **Endpoint URL:**  https://json-questions.vercel.app/questions
@@ -17,27 +26,29 @@ Populating Questions:
 The questions retrieved from the endpoint are then populated within the app's user interface for users to access and practice.
 By fetching questions dynamically from the endpoint, the app ensures that users have access to a varied and up-to-date collection of algorithmic challenges.
 
-**Link for endpoint:** https://json-questions.vercel.app/questions
-
 Initial View
 ---
 <img width="400" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/95274b5b-8dac-4a5e-8d03-a3d221cb71fc">
 
 Question View
 ---
-<img width="400" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/85a14cfb-c16b-4008-b3ba-9cf0dd31b6bf">
+<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/463d04a4-528d-4172-89e7-0a5bf8421145">
 
 Correct Response View
 ---
-<img width="400" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/9f181e2d-cf28-4ec5-8859-c7b6f2d8882d">
+<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/4bae347d-f58b-4e6e-b7b5-0bf7adb351cb">
 
 Wrong Response
 ---
-<img width="400" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/0ba3d0cc-5d6a-4ee3-ac08-b70c1c6f7af7">
+<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/23a87ffa-969b-47be-a004-6f8413bea907">
 
-Ranking View
+Ranking View (Score above 50%)
 ---
-<img width="400" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/9dbcd9fc-55cc-4177-abee-32eb09872dd0">
+<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/95861f59-564e-44dc-b9f2-5467feb9f474">
+
+Ranking View (Score bellow 50%)
+---
+<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/6497f13c-d235-4ad3-bb7f-db7f9a756bde">
 
 
 
