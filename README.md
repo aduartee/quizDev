@@ -28,27 +28,27 @@ By fetching questions dynamically from the endpoint, the app ensures that users 
 
 Initial View
 ---
-<img width="400" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/95274b5b-8dac-4a5e-8d03-a3d221cb71fc">
+![Iniciar Quiz](https://github.com/aduartee/quizDev/assets/103082913/efb15c6a-00cb-4a66-8343-97ea94d70da5)
 
 Question View
 ---
-<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/463d04a4-528d-4172-89e7-0a5bf8421145">
+![Iniciar Quiz](https://github.com/aduartee/quizDev/assets/103082913/3968a003-8ff5-474c-842c-00af288cf265)
 
 Correct Response View
 ---
-<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/4bae347d-f58b-4e6e-b7b5-0bf7adb351cb">
+![IMG_5460](https://github.com/aduartee/quizDev/assets/103082913/68699ccd-997b-40b8-a72c-03711a63a6d6)
 
 Wrong Response
 ---
-<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/23a87ffa-969b-47be-a004-6f8413bea907">
+![IMG_5464](https://github.com/aduartee/quizDev/assets/103082913/d7feaca7-ab8c-445e-a836-ab0af003255a)
 
 Ranking View (Score above 50%)
 ---
-<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/95861f59-564e-44dc-b9f2-5467feb9f474">
+![Parabéns por](https://github.com/aduartee/quizDev/assets/103082913/624d0e4e-6479-4d5c-bcd5-f4183792586b)
 
 Ranking View (Score bellow 50%)
 ---
-<img width="379" alt="image" src="https://github.com/aduartee/quizDev/assets/103082913/6497f13c-d235-4ad3-bb7f-db7f9a756bde">
+![Parabéns por](https://github.com/aduartee/quizDev/assets/103082913/2aacd0e0-aefe-49e3-8526-96e5f3f6a711)
 
 
 
