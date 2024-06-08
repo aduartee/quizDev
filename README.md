@@ -28,27 +28,27 @@ By fetching questions dynamically from the endpoint, the app ensures that users 
 
 Initial View
 ---
-![Iniciar Quiz](https://github.com/aduartee/quizDev/assets/103082913/efb15c6a-00cb-4a66-8343-97ea94d70da5)
+<img src="https://github.com/aduartee/quizDev/assets/103082913/efb15c6a-00cb-4a66-8343-97ea94d70da5" width="300">
 
 Question View
 ---
-![Iniciar Quiz](https://github.com/aduartee/quizDev/assets/103082913/3968a003-8ff5-474c-842c-00af288cf265)
+<img src="https://github.com/aduartee/quizDev/assets/103082913/efa110a0-b4c2-4f05-8840-396f9d7b83c6" width="300">
 
 Correct Response View
 ---
-![IMG_5460](https://github.com/aduartee/quizDev/assets/103082913/68699ccd-997b-40b8-a72c-03711a63a6d6)
+<img src="https://github.com/aduartee/quizDev/assets/103082913/68699ccd-997b-40b8-a72c-03711a63a6d6" width="300">
 
 Wrong Response
 ---
-![IMG_5464](https://github.com/aduartee/quizDev/assets/103082913/d7feaca7-ab8c-445e-a836-ab0af003255a)
+<img src="https://github.com/aduartee/quizDev/assets/103082913/d7feaca7-ab8c-445e-a836-ab0af003255a" width="300">
 
 Ranking View (Score above 50%)
 ---
-![Parabéns por](https://github.com/aduartee/quizDev/assets/103082913/624d0e4e-6479-4d5c-bcd5-f4183792586b)
+<img src="https://github.com/aduartee/quizDev/assets/103082913/624d0e4e-6479-4d5c-bcd5-f4183792586b" width="300">
 
-Ranking View (Score bellow 50%)
+Ranking View (Score below 50%)
 ---
-![Parabéns por](https://github.com/aduartee/quizDev/assets/103082913/2aacd0e0-aefe-49e3-8526-96e5f3f6a711)
+<img src="https://github.com/aduartee/quizDev/assets/103082913/2aacd0e0-aefe-49e3-8526-96e5f3f6a711" width="300">
 
 
 
