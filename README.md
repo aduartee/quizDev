@@ -7,6 +7,7 @@ Requirements
 - macOS
 - Xcode (latest version)
 - Swift 5
+- IOS 15.6 min
 
 Data Source
 ---
