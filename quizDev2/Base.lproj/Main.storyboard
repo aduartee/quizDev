@@ -17,11 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-Jm-E0F">
-                                <rect key="frame" x="64" y="180" width="302" height="104"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quizDevLogo" highlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xi2-Jm-E0F">
+                                <rect key="frame" x="64" y="100" width="400" height="500"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="1"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="32i-5u-ZsE"/>
+                                    <constraint firstAttribute="height" constant="300" id="xLf-Bs-HHe"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="regular"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hoS-PK-j0P">
-                                <rect key="frame" x="64" y="364" width="302" height="60"/>
+                                <rect key="frame" x="64" y="610" width="400" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="KBk-mW-dUM"/>
                                     <constraint firstAttribute="width" constant="302" id="RfI-iK-GEa"/>
@@ -38,11 +44,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.45882352941176469" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hoS-PK-j0P" firstAttribute="top" secondItem="xi2-Jm-E0F" secondAttribute="bottom" constant="80" id="CKW-tm-kUG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hoS-PK-j0P" secondAttribute="bottom" constant="300" id="4ZQ-HH-Tb8"/>
+                            <constraint firstItem="hoS-PK-j0P" firstAttribute="top" secondItem="xi2-Jm-E0F" secondAttribute="bottom" constant="10" id="CKW-tm-kUG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xi2-Jm-E0F" secondAttribute="trailing" constant="64" id="DL9-nM-iea"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hoS-PK-j0P" secondAttribute="trailing" constant="64" id="Qft-4A-Spt"/>
                             <constraint firstItem="xi2-Jm-E0F" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="VLK-Cy-9S5"/>
-                            <constraint firstItem="xi2-Jm-E0F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="ice-nB-dTt"/>
+                            <constraint firstItem="xi2-Jm-E0F" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="ice-nB-dTt"/>
                             <constraint firstItem="hoS-PK-j0P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="qcX-aK-x4K"/>
                         </constraints>
                     </view>
@@ -251,12 +258,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HVU-f8-5iH"/>
         <segue reference="kdc-dj-l32"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>
-        <image name="Logo" width="217" height="104"/>
+        <image name="quizDevLogo" width="500" height="500"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
