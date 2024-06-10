@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2626EAA22C167EEC0071A062 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2626EAA12C167EEC0071A062 /* TimerModel.swift */; };
 		26825E8E2BFE3E960081CF41 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26825E8D2BFE3E960081CF41 /* RankingViewController.swift */; };
 		26D739862BEE8CC700CDF728 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D739852BEE8CC700CDF728 /* QuestionViewController.swift */; };
 		26D739882BEE8FE400CDF728 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D739872BEE8FE400CDF728 /* QuestionModel.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2626EAA12C167EEC0071A062 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		26825E8D2BFE3E960081CF41 /* RankingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		26D739852BEE8CC700CDF728 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		26D739872BEE8FE400CDF728 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				26D739872BEE8FE400CDF728 /* QuestionModel.swift */,
+				2626EAA12C167EEC0071A062 /* TimerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 				26F257002BEE889A00048C7B /* AppDelegate.swift in Sources */,
 				26D739862BEE8CC700CDF728 /* QuestionViewController.swift in Sources */,
 				26F257022BEE889A00048C7B /* SceneDelegate.swift in Sources */,
+				2626EAA22C167EEC0071A062 /* TimerModel.swift in Sources */,
 				26D739882BEE8FE400CDF728 /* QuestionModel.swift in Sources */,
 				26825E8E2BFE3E960081CF41 /* RankingViewController.swift in Sources */,
 			);

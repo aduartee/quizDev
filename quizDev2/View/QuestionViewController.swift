@@ -12,12 +12,14 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var titleQuestion: UILabel!
     @IBOutlet var buttonResponses: [UIButton]!
     @IBOutlet weak var fadeView: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
     var numberQuestion: Int = 0
     var points: Int = 0
     var countActualQuestion: Int = 0
     var totalQuestions:Int = 0
     var loadedQuestions: [QuestionModel] = []
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var timer = Timer()
+    var initialTimer = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class QuestionViewController: UIViewController {
         makeRequest { (questions) in
             DispatchQueue.main.async {
                 self.loadedQuestions = questions
-                
+                self.callingTimer()
                 self.loadLayout()
                 self.showLoad(false)
             }
@@ -50,23 +52,33 @@ class QuestionViewController: UIViewController {
                 self.showLoad(false)
             }
         }
+    }
     
+    func callingTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(addTime)), userInfo: nil, repeats: true)
+    }
+    
+    @objc func addTime() {
+        if(initialTimer > 0) {
+            timerLabel.text = String(initialTimer)
+            initialTimer -= 1
+        } else {
+            timer.invalidate()
+        }
     }
     
     func showLoad(_ show: Bool) {
-        activityIndicator.isHidden = !show
         if show {
             fadeIn()
-            activityIndicator.startAnimating()
         } else {
             fadeOut()
-            activityIndicator.stopAnimating()
         }
     }
     
     @IBAction func getResponseOnTap(_ sender: UIButton) {
         let shuffledQuestions = loadedQuestions[numberQuestion].questions
         guard let correctQuestionText = loadedQuestions[numberQuestion].correctQuestionText else { return }
+        
         let isCorrect:Bool = shuffledQuestions[sender.tag] == correctQuestionText
     
         if isCorrect {
@@ -81,6 +93,7 @@ class QuestionViewController: UIViewController {
         print(loadedQuestions.count)
         self.totalQuestions = loadedQuestions.count
         self.setButtonsEnabled(false)
+        
         
         if !isLatIndex {
             self.numberQuestion += 1
@@ -107,7 +120,7 @@ class QuestionViewController: UIViewController {
             button.isEnabled = enabled
         }
     }
-    
+
     func goToRankingView() {
         performSegue(withIdentifier: "goToRankingView", sender: nil)
     }
