@@ -33,11 +33,15 @@ Initial View
 
 Question View
 ---
-<img src="https://github.com/aduartee/quizDev/assets/103082913/efa110a0-b4c2-4f05-8840-396f9d7b83c6" width="300">
+<img src="https://github.com/aduartee/quizDev/assets/103082913/e1a58148-6f2e-4fdc-b750-3432d95a7dc2" width="300">
 
 Correct Response View
 ---
 <img src="https://github.com/aduartee/quizDev/assets/103082913/68699ccd-997b-40b8-a72c-03711a63a6d6" width="300">
+
+Time is up
+---
+<img src="https://github.com/aduartee/quizDev/assets/103082913/c8dcc56a-9790-47de-9efb-f02074ca56ff" width="300">
 
 Wrong Response
 ---
