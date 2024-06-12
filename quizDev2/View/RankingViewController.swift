@@ -25,19 +25,15 @@ class RankingViewController: UIViewController {
         labelCorrectText.numberOfLines = 0
         labelPercent.numberOfLines = 0
         labelCorrectText.text = "Você acertou \(totalPoints) de \(totalQuestions) Questões"
-        let percentText = makesPorcentAvarage(totalPoints, totalQuestions)
-        labelPercent.text = percentText
+        let resultLabels = makesPorcentAvarage(totalPoints, totalQuestions)
+        labelPercent.text = resultLabels.0
+        iconEmoji.text = resultLabels.1
     }
     
-    func makesPorcentAvarage(_ points: Int, _ totalQuestions:Int) -> String {
-        let porcent = points > 0 ? ((points * 100) / totalQuestions) : 0
-        let porcentLabel = porcent == 0 ? "Errou todas as questões, tente novamente...": "Acertou \(porcent)% das questões"
-        if porcent <= 50 {
-            iconEmoji.text = "🫤"
-        }
-        
-        
-        return "Acertou \(porcent)% das questões"
+    func makesPorcentAvarage(_ points: Int, _ totalQuestions:Int) -> (String, String) {
+        let porcent = ((points * 100) / totalQuestions)
+        let enumRankingMessage = QuizResult(percent: porcent)
+        return (enumRankingMessage.message, enumRankingMessage.emoji)
     }
     
     enum QuizResult {
@@ -46,6 +42,7 @@ class RankingViewController: UIViewController {
              good,
              average,
              poor,
+             terrible,
              fail
         
         init(percent: Int) {
@@ -55,11 +52,13 @@ class RankingViewController: UIViewController {
             case 80..<100:
                 self = .veryGood
             case 60..<80:
-                self = .perfect
+                self = .good
             case 25..<60:
                 self = .average
-            case 1..<25:
+            case 10..<25:
                 self = .poor
+            case 1..<10:
+                self = .terrible
             default:
                 self = .fail
             }
@@ -77,6 +76,8 @@ class RankingViewController: UIViewController {
                 return "Acertou poucas questões. Pode melhorar!"
             case .poor:
                 return "Acertou poucas questões. Continue praticando!"
+            case .terrible:
+                return "Acertou quase nada. Continue praticando e tente novamente!"
             case .fail:
                 return "Errou todas as questões, tente novamente..."
             }
@@ -87,15 +88,17 @@ class RankingViewController: UIViewController {
             case .perfect:
                 return "👑"
             case .veryGood:
-                return "😊"
+                return "🤓"
             case .good:
                 return "🙂"
             case .average:
                 return "😐"
             case .poor:
-                return "😕"
-            case .fail:
                 return "😞"
+            case .terrible:
+                return "😶"
+            case .fail:
+                return "😭"
             }
             
         }

@@ -68,7 +68,7 @@ class QuestionViewController: UIViewController {
         } else {
             timer.invalidate()
             setButtonsEnabled(false)
-            animateInLabelTransition(newLabel: "Acabou o tempo", newColor: .red)
+            animateInLabelTransition(newLabel: "Timer Is Up", newColor: .red)
             goToNextQuestion()
         }
     }
