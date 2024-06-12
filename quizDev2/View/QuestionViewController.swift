@@ -57,7 +57,7 @@ class QuestionViewController: UIViewController {
     func callingTimer() {
         timer.invalidate()
         initialTimer = 11
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
         countTimer()
     }
     
@@ -160,6 +160,16 @@ class QuestionViewController: UIViewController {
         }
         countActualQuestion += 1
         setButtonsEnabled(true)
+        isTheLastQuestion()
+    }
+    
+    func isTheLastQuestion(){
+        let isLatIndex: Bool = countActualQuestion == loadedQuestions.count ? true : false
+        totalQuestions = loadedQuestions.count
+
+        if isLatIndex {
+            goToRankingView()
+        }
     }
     
     private func makeRequest(completion: @escaping ([QuestionModel]) -> ()) {
@@ -179,9 +189,7 @@ class QuestionViewController: UIViewController {
                 print(error)
             }
         }
-        
         task.resume()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
