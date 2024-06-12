@@ -24,7 +24,7 @@ class RankingViewController: UIViewController {
         navigationItem.hidesBackButton = true
         labelCorrectText.numberOfLines = 0
         labelPercent.numberOfLines = 0
-        labelCorrectText.text = "Você acertou \(totalPoints) de \(totalQuestions) Questões"
+        labelCorrectText.text = "You got \(totalPoints) out of \(totalQuestions) questions right"
         let resultLabels = makesPorcentAvarage(totalPoints, totalQuestions)
         labelPercent.text = resultLabels.0
         iconEmoji.text = resultLabels.1
@@ -67,19 +67,19 @@ class RankingViewController: UIViewController {
         var message: String {
             switch self {
             case .perfect:
-                return "Acertou todas as questões! Parabéns!"
+                return "Got all the questions right! Congratulations!"
             case .veryGood:
-                return "Acertou muitas questões. Muito bom!"
+                return "Got many questions right. Very good!"
             case .good:
-                return "Acertou algumas questões. Bom trabalho!"
+                return "Got some questions right. Good job!"
             case .average:
-                return "Acertou poucas questões. Pode melhorar!"
+                return "Got a few questions right. Can improve!"
             case .poor:
-                return "Acertou poucas questões. Continue praticando!"
+                return "Got a few questions right. Keep practicing!"
             case .terrible:
-                return "Acertou quase nada. Continue praticando e tente novamente!"
+                return "Got almost nothing right. Keep practicing and try again!"
             case .fail:
-                return "Errou todas as questões, tente novamente..."
+                return "Got all the questions wrong, try again..."
             }
         }
         

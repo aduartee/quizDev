@@ -57,7 +57,7 @@ class QuestionViewController: UIViewController {
     func callingTimer() {
         timer.invalidate()
         initialTimer = 11
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
         countTimer()
     }
     
