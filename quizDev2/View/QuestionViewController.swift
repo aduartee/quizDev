@@ -12,12 +12,15 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var titleQuestion: UILabel!
     @IBOutlet var buttonResponses: [UIButton]!
     @IBOutlet weak var fadeView: UIView!
+    @IBOutlet weak var timerLabel: UILabel!
     var numberQuestion: Int = 0
     var points: Int = 0
     var countActualQuestion: Int = 0
     var totalQuestions:Int = 0
     var loadedQuestions: [QuestionModel] = []
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var timer = Timer()
+    var initialTimer:Int = 10
+    var pauseTimer: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,6 @@ class QuestionViewController: UIViewController {
         makeRequest { (questions) in
             DispatchQueue.main.async {
                 self.loadedQuestions = questions
-                
                 self.loadLayout()
                 self.showLoad(false)
             }
@@ -50,17 +52,47 @@ class QuestionViewController: UIViewController {
                 self.showLoad(false)
             }
         }
+    }
     
+    func callingTimer() {
+        timer.invalidate()
+        initialTimer = 11
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
+        countTimer()
+    }
+    
+    @objc func countTimer() {
+        if(initialTimer > 1) {
+            initialTimer -= 1
+            animateInLabelTransition(newLabel: String(initialTimer), newColor: .white)
+        } else {
+            timer.invalidate()
+            setButtonsEnabled(false)
+            animateInLabelTransition(newLabel: "Timer Is Up", newColor: .red)
+            goToNextQuestion()
+        }
+    }
+    
+    
+    func goToNextQuestion() {
+        if numberQuestion < loadedQuestions.count - 1 {
+            numberQuestion += 1
+            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLayout), userInfo: nil, repeats: false)
+        }
+    }
+    
+    func animateInLabelTransition(newLabel: String, newColor: UIColor) -> Void {
+        UIView.transition(with: timerLabel, duration: 0.2, options: .transitionFlipFromTop, animations: {
+            self.timerLabel.text = newLabel
+            self.timerLabel.textColor = newColor
+        })
     }
     
     func showLoad(_ show: Bool) {
-        activityIndicator.isHidden = !show
         if show {
             fadeIn()
-            activityIndicator.startAnimating()
         } else {
             fadeOut()
-            activityIndicator.stopAnimating()
         }
     }
     
@@ -68,28 +100,30 @@ class QuestionViewController: UIViewController {
         let shuffledQuestions = loadedQuestions[numberQuestion].questions
         guard let correctQuestionText = loadedQuestions[numberQuestion].correctQuestionText else { return }
         let isCorrect:Bool = shuffledQuestions[sender.tag] == correctQuestionText
-    
+        
         if isCorrect {
-            self.points += 1
+            points += 1
             sender.backgroundColor = .green
+            timer.invalidate()
+            animateInLabelTransition(newLabel: String(initialTimer), newColor: .green)
         } else {
             sender.backgroundColor = .red
+            timer.invalidate()
+            animateInLabelTransition(newLabel: String(initialTimer), newColor: .red)
         }
         
-        let isLatIndex: Bool = self.countActualQuestion == loadedQuestions.count ? true : false
-        print(self.countActualQuestion)
-        print(loadedQuestions.count)
-        self.totalQuestions = loadedQuestions.count
-        self.setButtonsEnabled(false)
+        let isLatIndex: Bool = countActualQuestion == loadedQuestions.count ? true : false
+        totalQuestions = loadedQuestions.count
+        setButtonsEnabled(false)
         
         if !isLatIndex {
-            self.numberQuestion += 1
-            Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(self.loadLayout), userInfo: nil, repeats: false)
+            numberQuestion += 1
+            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLayout), userInfo: nil, repeats: false)
         } else {
-            self.goToRankingView()
+            goToRankingView()
         }
     }
-        
+    
     func fadeIn(duration: TimeInterval = 0.2, completion: ((Bool) -> Void)? = nil  ) {
         UIView.animate(withDuration: duration, animations: {
             self.fadeView.alpha = 1.0
@@ -97,10 +131,10 @@ class QuestionViewController: UIViewController {
     }
     
     func fadeOut(duration: TimeInterval = 0.5, completion: ((Bool) -> Void)? = nil) {
-           UIView.animate(withDuration: duration, animations: {
-               self.fadeView.alpha = 0.0
-           }, completion: completion)
-       }
+        UIView.animate(withDuration: duration, animations: {
+            self.fadeView.alpha = 0.0
+        }, completion: completion)
+    }
     
     func setButtonsEnabled(_ enabled: Bool) {
         for button in buttonResponses {
@@ -113,8 +147,11 @@ class QuestionViewController: UIViewController {
     }
     
     @objc func loadLayout() {
+        callingTimer()
         titleQuestion.numberOfLines = 0
-        self.titleQuestion.text = loadedQuestions[numberQuestion].title
+        print(numberQuestion)
+        print(countActualQuestion)
+        titleQuestion.text = loadedQuestions[numberQuestion].title
         for button in self.buttonResponses {
             button.sizeToFit()
             button.backgroundColor = UIColor(red: 75/255.0, green: 140/255.0, blue: 225/255.0, alpha: 1.0)
@@ -123,6 +160,16 @@ class QuestionViewController: UIViewController {
         }
         countActualQuestion += 1
         setButtonsEnabled(true)
+        isTheLastQuestion()
+    }
+    
+    func isTheLastQuestion(){
+        let isLatIndex: Bool = countActualQuestion == loadedQuestions.count ? true : false
+        totalQuestions = loadedQuestions.count
+
+        if isLatIndex {
+            goToRankingView()
+        }
     }
     
     private func makeRequest(completion: @escaping ([QuestionModel]) -> ()) {
@@ -137,18 +184,16 @@ class QuestionViewController: UIViewController {
                 
                 let shuffleQuestions = postResponse.map { shuffledQuestions($0) }
                 completion(shuffleQuestions)
-
+                
             } catch let error {
                 print(error)
             }
         }
-        
         task.resume()
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let rankingView = segue.destination as? RankingViewController 
+        guard let rankingView = segue.destination as? RankingViewController
         else {return}
         rankingView.totalPoints = points
         rankingView.totalQuestions = totalQuestions
