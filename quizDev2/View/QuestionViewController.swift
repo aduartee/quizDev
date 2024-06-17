@@ -13,6 +13,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet var buttonResponses: [UIButton]!
     @IBOutlet weak var fadeView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
+    var chosenDifficulty: Double!
     var numberQuestion: Int = 0
     var points: Int = 0
     var countActualQuestion: Int = 0
@@ -57,7 +58,7 @@ class QuestionViewController: UIViewController {
     func callingTimer() {
         timer.invalidate()
         initialTimer = 11
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: chosenDifficulty, target: self, selector: (#selector(countTimer)), userInfo: nil, repeats: true)
         countTimer()
     }
     
