@@ -29,7 +29,7 @@ By fetching questions dynamically from the endpoint, the app ensures that users 
 
 Initial View
 ---
-<img src="https://github.com/aduartee/quizDev/assets/103082913/efb15c6a-00cb-4a66-8343-97ea94d70da5" width="300">
+<img src="https://github.com/aduartee/quizDev/assets/103082913/c7293fc0-2065-448f-aecb-0d146625b4cf" width="300">
 
 Question View
 ---
