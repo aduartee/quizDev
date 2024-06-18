@@ -41,7 +41,8 @@ class DifficultViewController: UIViewController {
     enum difficultValue {
         case easy,
              medium,
-             hard
+             hard,
+             impossible
         
         var value: Double {
             switch self {
@@ -51,6 +52,8 @@ class DifficultViewController: UIViewController {
                 return 0.7
             case .hard:
                 return 0.4
+            case .impossible:
+                return 0.3
             }
         }
         
@@ -60,10 +63,11 @@ class DifficultViewController: UIViewController {
                 self = .easy
             case 2:
                 self = .medium
-            default:
+            case 3:
                 self = .hard
+            default:
+                self = .impossible
             }
         }        
     }
-    
 }
