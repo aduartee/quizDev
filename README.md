@@ -31,25 +31,43 @@ Initial View
 ---
 <img src="https://github.com/aduartee/quizDev/assets/103082913/c7293fc0-2065-448f-aecb-0d146625b4cf" width="300">
 
+Choose the difficult
+---
+<img src="https://github.com/aduartee/quizDev/assets/103082913/aa710fda-bb0f-4a7e-8e15-3c58ed13d2fa" width="300">
+
 Question View
 ---
 <img src="https://github.com/aduartee/quizDev/assets/103082913/e1a58148-6f2e-4fdc-b750-3432d95a7dc2" width="300">
 
-Correct Response View
+Correct Anwser View
 ---
-<img src="https://github.com/aduartee/quizDev/assets/103082913/68699ccd-997b-40b8-a72c-03711a63a6d6" width="300">
+<img src="https://github.com/aduartee/quizDev/assets/103082913/372a7942-bacd-421f-8c88-60355fa92d0d" width="300">
 
 Time is up
 ---
 <img src="https://github.com/aduartee/quizDev/assets/103082913/c8dcc56a-9790-47de-9efb-f02074ca56ff" width="300">
 
-Wrong Response
+Wrong Anwser
 ---
-<img src="https://github.com/aduartee/quizDev/assets/103082913/d7feaca7-ab8c-445e-a836-ab0af003255a" width="300">
+<img src="https://github.com/aduartee/quizDev/assets/103082913/71841118-4aa7-4ef7-a2b7-a0079e4b4a6e" width="300">
 
-Ranking View (Score above 50%)
+Ranking View
 ---
-<img src="https://github.com/aduartee/quizDev/assets/103082913/624d0e4e-6479-4d5c-bcd5-f4183792586b" width="300">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
+    <div style="margin: 10px;">
+        <p>Ranking View</p>
+        <img src="https://github.com/aduartee/quizDev/assets/103082913/a75c315b-b127-433d-ae06-4ee17d664054" width="300">
+    </div>
+    <div style="margin: 10px;">
+        <p>Ranking View</p>
+        <img src="https://github.com/aduartee/quizDev/assets/103082913/624d0e4e-6479-4d5c-bcd5-f4183792586b" width="300">
+    </div>
+    <div style="margin: 10px;">
+        <p>Ranking View (Score below 50%)</p>
+        <img src="https://github.com/aduartee/quizDev/assets/103082913/2aacd0e0-aefe-49e3-8526-96e5f3f6a711" width="300">
+    </div>
+</div>
+
 
 Ranking View (Score below 50%)
 ---
