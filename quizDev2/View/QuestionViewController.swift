@@ -70,15 +70,8 @@ class QuestionViewController: UIViewController {
             timer.invalidate()
             setButtonsEnabled(false)
             animateInLabelTransition(newLabel: "Timer Is Up", newColor: .red)
-            goToNextQuestion()
-        }
-    }
-    
-    
-    func goToNextQuestion() {
-        if numberQuestion < loadedQuestions.count - 1 {
-            numberQuestion += 1
-            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLayout), userInfo: nil, repeats: false)
+            let isLatIndex: Bool = countActualQuestion >= loadedQuestions.count ? true : false
+            sendToNextQuestion(isLatIndex)
         }
     }
     
@@ -113,16 +106,20 @@ class QuestionViewController: UIViewController {
             animateInLabelTransition(newLabel: String(initialTimer), newColor: .red)
         }
         
-        let isLatIndex: Bool = countActualQuestion == loadedQuestions.count ? true : false
+        let isLatIndex: Bool = countActualQuestion >= loadedQuestions.count ? true : false
         totalQuestions = loadedQuestions.count
         setButtonsEnabled(false)
-        
-        if !isLatIndex {
-            numberQuestion += 1
-            Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLayout), userInfo: nil, repeats: false)
-        } else {
+        sendToNextQuestion(isLatIndex)
+    }
+    
+    func sendToNextQuestion(_ isLastIndex: Bool) {
+        if isLastIndex {
             goToRankingView()
+            return
         }
+        
+        numberQuestion += 1
+        Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(loadLayout), userInfo: nil, repeats: false)
     }
     
     func fadeIn(duration: TimeInterval = 0.2, completion: ((Bool) -> Void)? = nil  ) {
@@ -150,8 +147,6 @@ class QuestionViewController: UIViewController {
     @objc func loadLayout() {
         callingTimer()
         titleQuestion.numberOfLines = 0
-        print(numberQuestion)
-        print(countActualQuestion)
         titleQuestion.text = loadedQuestions[numberQuestion].title
         for button in self.buttonResponses {
             button.sizeToFit()
@@ -159,18 +154,22 @@ class QuestionViewController: UIViewController {
             let newTitleQuestion = loadedQuestions[numberQuestion].questions[button.tag]
             button.setTitle(newTitleQuestion, for: .normal)
         }
-        countActualQuestion += 1
+        let isLastIndex: Bool = countActualQuestion >= loadedQuestions.count ? true : false
+        print("Number of questions inside LoadLayout: \(numberQuestion)")
+
         setButtonsEnabled(true)
-        isTheLastQuestion()
+        isTheLastQuestion(isLastIndex)
     }
     
-    func isTheLastQuestion(){
-        let isLatIndex: Bool = countActualQuestion == loadedQuestions.count ? true : false
+    func isTheLastQuestion(_ isTheLastIndex: Bool) {
         totalQuestions = loadedQuestions.count
 
-        if isLatIndex {
+        if isTheLastIndex {
             goToRankingView()
+            return
         }
+        
+        countActualQuestion += 1
     }
     
     private func makeRequest(completion: @escaping ([QuestionModel]) -> ()) {

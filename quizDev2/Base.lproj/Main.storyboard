@@ -165,9 +165,9 @@
         <!--Ranking View Controller-->
         <scene sceneID="YGc-KA-EWo">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="aWo-ib-J8T" customClass="RankingViewController" customModule="quizDev2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="overFullScreen" id="aWo-ib-J8T" customClass="RankingViewController" customModule="quizDev2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bkU-0x-IeE">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voce acertou 10 questoes de 10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rB9-MG-mjC">
@@ -366,6 +366,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="HVU-f8-5iH"/>
         <segue reference="kdc-dj-l32"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
