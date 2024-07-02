@@ -45,7 +45,7 @@ Correct Anwser View
 
 Time is up
 ---
-<img src="https://github.com/aduartee/quizDev/assets/103082913/c8dcc56a-9790-47de-9efb-f02074ca56ff" width="300">
+<img src="https://github.com/aduartee/quizDev/assets/103082913/a7a81991-1ce0-4103-b69f-b458489fcb30" width="300">
 
 Wrong Anwser
 ---
@@ -53,26 +53,11 @@ Wrong Anwser
 
 Ranking View
 ---
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-    <div style="margin: 10px;">
-        <p>Ranking View</p>
-        <img src="https://github.com/aduartee/quizDev/assets/103082913/a75c315b-b127-433d-ae06-4ee17d664054" width="300">
-    </div>
-    <div style="margin: 10px;">
-        <p>Ranking View</p>
-        <img src="https://github.com/aduartee/quizDev/assets/103082913/624d0e4e-6479-4d5c-bcd5-f4183792586b" width="300">
-    </div>
-    <div style="margin: 10px;">
-        <p>Ranking View (Score below 50%)</p>
-        <img src="https://github.com/aduartee/quizDev/assets/103082913/2aacd0e0-aefe-49e3-8526-96e5f3f6a711" width="300">
-    </div>
-</div>
 
-
-Ranking View (Score below 50%)
----
-<img src="https://github.com/aduartee/quizDev/assets/103082913/2aacd0e0-aefe-49e3-8526-96e5f3f6a711" width="300">
-
-
-
-
+<p align="center">
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/976f184d-e027-4937-b120-877bfc86eb2a" width="200" />
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/2d8aedff-4aa6-4195-a591-96233983b1e9" width="200" />
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/387af659-f9ba-4dc7-b32f-3f753e6bf567" width="200" /> 
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/74ae52a0-966b-428e-a0de-ca399303c440" width="200" /> 
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/69ede11b-a7bc-4927-bfc1-eba941d2411c" width="200" /> 
+</p>
