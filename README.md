@@ -55,9 +55,11 @@ Ranking View
 ---
 
 <p align="center">
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/f3420b02-4aa8-4dde-8123-a04a0d6c73f1" width="200" />
   <img src="https://github.com/aduartee/quizDev/assets/103082913/976f184d-e027-4937-b120-877bfc86eb2a" width="200" />
   <img src="https://github.com/aduartee/quizDev/assets/103082913/2d8aedff-4aa6-4195-a591-96233983b1e9" width="200" />
   <img src="https://github.com/aduartee/quizDev/assets/103082913/387af659-f9ba-4dc7-b32f-3f753e6bf567" width="200" /> 
   <img src="https://github.com/aduartee/quizDev/assets/103082913/74ae52a0-966b-428e-a0de-ca399303c440" width="200" /> 
-  <img src="https://github.com/aduartee/quizDev/assets/103082913/69ede11b-a7bc-4927-bfc1-eba941d2411c" width="200" /> 
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/69ede11b-a7bc-4927-bfc1-eba941d2411c" width="200" />
+  <img src="https://github.com/aduartee/quizDev/assets/103082913/a1f2bdd3-7603-4f25-a55f-b2ce26ba7469" width="200" />
 </p>
